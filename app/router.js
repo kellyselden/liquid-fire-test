@@ -6,6 +6,12 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('universe', function() {
+    this.resource('universe.supercluster', { path: 'supercluster' }, function() {});
+  });
+  this.resource('atoms', function() {
+    this.resource('atom', { path: ':atom_id' }, function() {});
+  });
 });
 
 export default Router;
